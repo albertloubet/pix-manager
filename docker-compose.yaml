@@ -1,0 +1,19 @@
+version: '3'
+
+services:
+  mysqldb:
+    image: mysql:8.0
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=root20220125
+      - MYSQL_DATABASE=pixdatabase
+      - MYSQL_USER=pixuser
+      - MYSQL_PASSWORD=20220125
+    networks:
+      - pix-manager-network
+    ports:
+      - 3306:3306
+
+networks:
+  pix-manager-network:
+    driver: bridge
